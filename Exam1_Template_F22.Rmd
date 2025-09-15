@@ -134,15 +134,34 @@ slugging(89, 34, 0, 25, 499)
 
 > For example, if you pass the function a vector containing 4 and 16, it should return a vector containing 2 and 4. 
 
+```{r}
+square_root <- function(x){
+  x^.5
+}
+vectorz <- c(4,16)
+square_root(vectorz)
+```
+
 2. [6 points] Write a second function that does the above, but also removes any negative values or changes them to 0.
 
 > For example, if you pass *this* function -4 and 16, it should return either 0 and 4 or just 4.
+
+```{r}
+square_root_abs <- function(x){
+  ((x^2)^.5)^.5
+}
+vector1 <- c(-4,-16,-36)
+square_root_abs(vector1)
+```
 
 3. [3 points] Test your second function on the following vectors:
 
 ```{r}
 test1 <- c(1:10)
 test2 <- c(-4:4)
+
+square_root_abs(test1)
+square_root_abs(test2)
 ```
 
 
@@ -157,7 +176,49 @@ Rating | Bonus Percent
 1|5%
 
 1. [8 points] Write a function that takes the employees score and their salary as arguments and returns their bonus amount for the year. 
+```{r}
+bonus <- function(score, salary){
+  if (score == 1){
+  .05*salary
+    }
+  else if (score == 2){
+  .1*salary
+  }
+  else if (score == 3){
+    .15*salary
+  }
+  else {
+    print("Score must be 1, 2, or 3")
+  }
+}
+
+paste("Bonus is: $", bonus(2, 40000))
+```
 
 2. [2 points] Fitz makes $100,000 a year, but only got a score of 1. Use your function to calculate his bonus.
+```{r}
+paste("Bonus is: $", bonus(1, 100000))
+```
 
 3. [3 extra credit points] Modify your function so that it returns the full pay for the year, salary and bonus combined. How much will Fitz make in total?
+```{r}
+salary <- 120000
+score <- 2
+bonus_w_pay <- function(score, salary){
+  if (score == 1){
+  .05*salary+salary
+    }
+  else if (score == 2){
+  .1*salary+salary
+  }
+  else if (score == 3){
+    .15*salary+salary
+  }
+  else {
+    print("Score must be 1, 2, or 3")
+  }
+}
+
+paste("My salary is: $", salary, ". Bonus is: $", bonus(score, salary), "Total for year is: $", bonus_w_pay(score,salary))
+```
+
