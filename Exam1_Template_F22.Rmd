@@ -36,21 +36,36 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Part 2 (10 points)
 
-In your own words, *briefly* describe the difference between saving, committing, and pushing. 
+In your own words, *briefly* describe the difference between saving, committing, and pushing.
+
+### Saving: Saves only to my computer, raw file, no changes shown.
+### Commiting: Saves with history of changes, so as to making it easier and look at prevoius iterations.
+### Pushing: Pushing the commited version to Git, so we can see the final version and all the changes made every commit.
 
 ## Part 3 (10 points)
 
 * [2 points] Create a vector named `numbers` that contains the odd numbers from 3 to 15. 
+```{r}
+(numbers <- seq(3, 15, 2))
+
+```
 
 * [3 points] Create a second vector called `half_numbers` that contains the elements of `numbers` divided by 2
+```{r}
+(half_numbers <- numbers/2)
+```
 
 * [2 points] Add the string "puppies" to the end of `numbers`. 
+```{r}
+pup_nums <- paste(numbers, "puppies")
+```
 
 * [3 points] Try to divide the new vector by two. Does it work? Why or why not? 
 
 ```{r}
-
+(pup_nums/2)
 ```
+No, because when we use paste, we turn everything into strings, hence the "non numerical" error
 
 ## Part 4 (15 points)
 
@@ -62,12 +77,32 @@ age <- c(2, 5, 4, 6, 1, 13, 9, 3)
 weight <- c(14, 89, 32, 46, 55, 7, 25, 36)
 ```
 
-* [2 points] Find the average weight and age of the dogs.
-* [2 points] How light is the dog with the lowest weight?
-* [3 points] What is the name of the oldest dog?
-* [3 points] What is the age of the heaviest dog?
-* [2 points] It's been 2 years since you entered this information! Change `age` to reflect that. 
-* [3 points] A new dog is here! Her name is Daisy, she is 3 years old, and weighs 39 pounds. Add her to your data. 
+* 1. [2 points] Find the average weight and age of the dogs.
+* 2. [2 points] How light is the dog with the lowest weight?
+* 3. [3 points] What is the name of the oldest dog?
+* 4. [3 points] What is the age of the heaviest dog?
+* 5. [2 points] It's been 2 years since you entered this information! Change `age` to reflect that. 
+* 6. [3 points] A new dog is here! Her name is Daisy, she is 3 years old, and weighs 39 pounds. Add her to your data. 
+
+```{r}
+paste("1:", (mean(weight)), "lbs")
+
+paste("2:", (min(weight)), "lbs")
+
+paste("3:", names[age == max(age)])
+
+paste("4:", names[weight == max(weight)])
+
+print(age <- age+2)
+
+new_age <- c(age, 3)
+new_weight <- c(weight, 39)
+new_name <- c(names, "Daisy")
+
+new_name
+new_weight
+new_age
+```
 
 
 ## Part 5 (10 points)
@@ -83,6 +118,14 @@ $$  \frac{(1B + 2B\times2 + 3B \times 3 + HR\times 4)}{AB} $$
 `1B = 89, 2B = 34, 3B = 0, HR = 25, AB = 499 `
 
 Use your function to find his slugging percentage. 
+```{r}
+
+slugging <- function(oneb, twob, threeb, homer, atbase){
+  (oneb + twob*2 + 3*threeb + homer)/atbase
+}
+
+slugging(89, 34, 0, 25, 499)
+```
 
 
 ## Part 6 (15 points)
