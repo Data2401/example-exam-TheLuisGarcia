@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-### Part 1 (20 points)
+## Part 1 (20 points)
 
 * You will get 10 points of credit for a properly knit RMD/html(or pdf) file.
 * You will get 10 points of credit for a properly committed and pushed GitHub repository, with clear and descriptive commit descriptions. 
@@ -62,9 +62,6 @@ pup_nums <- paste(numbers, "puppies")
 
 * [3 points] Try to divide the new vector by two. Does it work? Why or why not? 
 
-```{r}
-(pup_nums/2)
-```
 No, because when we use paste, we turn everything into strings, hence the "non numerical" error
 
 ## Part 4 (15 points)

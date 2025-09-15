@@ -371,8 +371,8 @@ and push to your repository <em>BEFORE 2:45</em> and turn in link to the
 repository to Blackboard. <strong>Any commit made after 2:45 pm will not
 be graded.</strong></p>
 <div style="page-break-after: always;"></div>
-<div id="part-1-20-points" class="section level3">
-<h3>Part 1 (20 points)</h3>
+<div id="part-1-20-points" class="section level2">
+<h2>Part 1 (20 points)</h2>
 <ul>
 <li>You will get 10 points of credit for a properly knit RMD/html(or
 pdf) file.</li>
@@ -384,20 +384,43 @@ GitHub repository, with clear and descriptive commit descriptions.</li>
 <h2>Part 2 (10 points)</h2>
 <p>In your own words, <em>briefly</em> describe the difference between
 saving, committing, and pushing.</p>
+<div id="saving-saves-only-to-my-computer-raw-file-no-changes-shown." class="section level3">
+<h3>Saving: Saves only to my computer, raw file, no changes shown.</h3>
+</div>
+<div id="commiting-saves-with-history-of-changes-so-as-to-making-it-easier-and-look-at-prevoius-iterations." class="section level3">
+<h3>Commiting: Saves with history of changes, so as to making it easier
+and look at prevoius iterations.</h3>
+</div>
+<div id="pushing-pushing-the-commited-version-to-git-so-we-can-see-the-final-version-and-all-the-changes-made-every-commit." class="section level3">
+<h3>Pushing: Pushing the commited version to Git, so we can see the
+final version and all the changes made every commit.</h3>
+</div>
 </div>
 <div id="part-3-10-points" class="section level2">
 <h2>Part 3 (10 points)</h2>
 <ul>
-<li><p>[2 points] Create a vector named <code>numbers</code> that
-contains the odd numbers from 3 to 15.</p></li>
-<li><p>[3 points] Create a second vector called
-<code>half_numbers</code> that contains the elements of
-<code>numbers</code> divided by 2</p></li>
-<li><p>[2 points] Add the string “puppies” to the end of
-<code>numbers</code>.</p></li>
-<li><p>[3 points] Try to divide the new vector by two. Does it work? Why
-or why not?</p></li>
+<li>[2 points] Create a vector named <code>numbers</code> that contains
+the odd numbers from 3 to 15.</li>
 </ul>
+<pre class="r"><code>(numbers &lt;- seq(3, 15, 2))</code></pre>
+<pre><code>## [1]  3  5  7  9 11 13 15</code></pre>
+<ul>
+<li>[3 points] Create a second vector called <code>half_numbers</code>
+that contains the elements of <code>numbers</code> divided by 2</li>
+</ul>
+<pre class="r"><code>(half_numbers &lt;- numbers/2)</code></pre>
+<pre><code>## [1] 1.5 2.5 3.5 4.5 5.5 6.5 7.5</code></pre>
+<ul>
+<li>[2 points] Add the string “puppies” to the end of
+<code>numbers</code>.</li>
+</ul>
+<pre class="r"><code>pup_nums &lt;- paste(numbers, &quot;puppies&quot;)</code></pre>
+<ul>
+<li>[3 points] Try to divide the new vector by two. Does it work? Why or
+why not?</li>
+</ul>
+<p>No, because when we use paste, we turn everything into strings, hence
+the “non numerical” error</p>
 </div>
 <div id="part-4-15-points" class="section level2">
 <h2>Part 4 (15 points)</h2>
@@ -407,15 +430,48 @@ that come to your business.</p>
 age &lt;- c(2, 5, 4, 6, 1, 13, 9, 3)
 weight &lt;- c(14, 89, 32, 46, 55, 7, 25, 36)</code></pre>
 <ul>
+<li><ol style="list-style-type: decimal">
 <li>[2 points] Find the average weight and age of the dogs.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
 <li>[2 points] How light is the dog with the lowest weight?</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
 <li>[3 points] What is the name of the oldest dog?</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
 <li>[3 points] What is the age of the heaviest dog?</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
 <li>[2 points] It’s been 2 years since you entered this information!
 Change <code>age</code> to reflect that.</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
 <li>[3 points] A new dog is here! Her name is Daisy, she is 3 years old,
 and weighs 39 pounds. Add her to your data.</li>
+</ol></li>
 </ul>
+<pre class="r"><code>paste(&quot;1:&quot;, (mean(weight)), &quot;lbs&quot;)</code></pre>
+<pre><code>## [1] &quot;1: 38 lbs&quot;</code></pre>
+<pre class="r"><code>paste(&quot;2:&quot;, (min(weight)), &quot;lbs&quot;)</code></pre>
+<pre><code>## [1] &quot;2: 7 lbs&quot;</code></pre>
+<pre class="r"><code>paste(&quot;3:&quot;, names[age == max(age)])</code></pre>
+<pre><code>## [1] &quot;3: Lucy&quot;</code></pre>
+<pre class="r"><code>paste(&quot;4:&quot;, names[weight == max(weight)])</code></pre>
+<pre><code>## [1] &quot;4: Doug&quot;</code></pre>
+<pre class="r"><code>print(age &lt;- age+2)</code></pre>
+<pre><code>## [1]  4  7  6  8  3 15 11  5</code></pre>
+<pre class="r"><code>new_age &lt;- c(age, 3)
+new_weight &lt;- c(weight, 39)
+new_name &lt;- c(names, &quot;Daisy&quot;)
+
+new_name</code></pre>
+<pre><code>## [1] &quot;Fido&quot;    &quot;Doug&quot;    &quot;Bella&quot;   &quot;Max&quot;     &quot;Cooper&quot;  &quot;Lucy&quot;    &quot;Duke&quot;   
+## [8] &quot;Barkley&quot; &quot;Daisy&quot;</code></pre>
+<pre class="r"><code>new_weight</code></pre>
+<pre><code>## [1] 14 89 32 46 55  7 25 36 39</code></pre>
+<pre class="r"><code>new_age</code></pre>
+<pre><code>## [1]  4  7  6  8  3 15 11  5  3</code></pre>
 </div>
 <div id="part-5-10-points" class="section level2">
 <h2>Part 5 (10 points)</h2>
@@ -434,6 +490,12 @@ stats:</li>
 </ol>
 <p><code>1B = 89, 2B = 34, 3B = 0, HR = 25, AB = 499</code></p>
 <p>Use your function to find his slugging percentage.</p>
+<pre class="r"><code>slugging &lt;- function(oneb, twob, threeb, homer, atbase){
+  (oneb + twob*2 + 3*threeb + homer)/atbase
+}
+
+slugging(89, 34, 0, 25, 499)</code></pre>
+<pre><code>## [1] 0.3647295</code></pre>
 </div>
 <div id="part-6-15-points" class="section level2">
 <h2>Part 6 (15 points)</h2>
@@ -446,6 +508,12 @@ vector.</li>
 <p>For example, if you pass the function a vector containing 4 and 16,
 it should return a vector containing 2 and 4.</p>
 </blockquote>
+<pre class="r"><code>square_root &lt;- function(x){
+  x^.5
+}
+vectorz &lt;- c(4,16)
+square_root(vectorz)</code></pre>
+<pre><code>## [1] 2 4</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>[6 points] Write a second function that does the above, but also
 removes any negative values or changes them to 0.</li>
@@ -454,11 +522,24 @@ removes any negative values or changes them to 0.</li>
 <p>For example, if you pass <em>this</em> function -4 and 16, it should
 return either 0 and 4 or just 4.</p>
 </blockquote>
+<pre class="r"><code>square_root_abs &lt;- function(x){
+  ((x^2)^.5)^.5
+}
+vector1 &lt;- c(-4,-16,-36)
+square_root_abs(vector1)</code></pre>
+<pre><code>## [1] 2 4 6</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>[3 points] Test your second function on the following vectors:</li>
 </ol>
 <pre class="r"><code>test1 &lt;- c(1:10)
-test2 &lt;- c(-4:4)</code></pre>
+test2 &lt;- c(-4:4)
+
+square_root_abs(test1)</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
+##  [9] 3.000000 3.162278</code></pre>
+<pre class="r"><code>square_root_abs(test2)</code></pre>
+<pre><code>## [1] 2.000000 1.732051 1.414214 1.000000 0.000000 1.000000 1.414214 1.732051
+## [9] 2.000000</code></pre>
 </div>
 <div id="part-7-103-points" class="section level2">
 <h2>Part 7 (10+3 points)</h2>
@@ -489,15 +570,56 @@ of their salary, if they get a 1, their bonus is 5% of their salary.</p>
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p>[8 points] Write a function that takes the employees score and
-their salary as arguments and returns their bonus amount for the
-year.</p></li>
-<li><p>[2 points] Fitz makes $100,000 a year, but only got a score of 1.
-Use your function to calculate his bonus.</p></li>
-<li><p>[3 extra credit points] Modify your function so that it returns
-the full pay for the year, salary and bonus combined. How much will Fitz
-make in total?</p></li>
+<li>[8 points] Write a function that takes the employees score and their
+salary as arguments and returns their bonus amount for the year.</li>
 </ol>
+<pre class="r"><code>bonus &lt;- function(score, salary){
+  if (score == 1){
+  .05*salary
+    }
+  else if (score == 2){
+  .1*salary
+  }
+  else if (score == 3){
+    .15*salary
+  }
+  else {
+    print(&quot;Score must be 1, 2, or 3&quot;)
+  }
+}
+
+paste(&quot;Bonus is: $&quot;, bonus(2, 40000))</code></pre>
+<pre><code>## [1] &quot;Bonus is: $ 4000&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>[2 points] Fitz makes $100,000 a year, but only got a score of 1.
+Use your function to calculate his bonus.</li>
+</ol>
+<pre class="r"><code>paste(&quot;Bonus is: $&quot;, bonus(1, 100000))</code></pre>
+<pre><code>## [1] &quot;Bonus is: $ 5000&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>[3 extra credit points] Modify your function so that it returns the
+full pay for the year, salary and bonus combined. How much will Fitz
+make in total?</li>
+</ol>
+<pre class="r"><code>salary &lt;- 120000
+score &lt;- 2
+bonus_w_pay &lt;- function(score, salary){
+  if (score == 1){
+  .05*salary+salary
+    }
+  else if (score == 2){
+  .1*salary+salary
+  }
+  else if (score == 3){
+    .15*salary+salary
+  }
+  else {
+    print(&quot;Score must be 1, 2, or 3&quot;)
+  }
+}
+
+paste(&quot;My salary is: $&quot;, salary, &quot;. Bonus is: $&quot;, bonus(score, salary), &quot;Total for year is: $&quot;, bonus_w_pay(score,salary))</code></pre>
+<pre><code>## [1] &quot;My salary is: $ 120000 . Bonus is: $ 12000 Total for year is: $ 132000&quot;</code></pre>
 </div>
 
 
